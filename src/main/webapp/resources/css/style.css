@@ -1,0 +1,293 @@
+@CHARSET "US-ASCII";
+
+.pic {
+	background-repeat: no-repeat; 
+	background-image: url('restaurant.jpg');
+	background-size: cover;
+}
+
+.a {
+	font-family: verdana;
+	color: #06c;
+	text-decoration: underline;
+	font-size: 18px;
+}
+
+table.t {
+	margin-bottom: 1.4em;
+	width: 100%;
+}
+
+th {
+	font-weight: bold;
+}
+
+thead th {
+	background: #c3d9ff;
+}
+
+th,td,caption {
+	padding: 4px 10px 4px 5px;
+}
+
+tr.even td {
+	background: #e5ecf9;
+}
+
+.p {
+	font-family: verdana;
+	font-size: 20px;
+}
+.c{
+	font-family: verdana;
+	font-size: 14px;
+	
+}
+
+div.n1 {
+	position: absolute;
+	width: 200px;
+	height: 600px;
+}
+.panel-body{
+/* 	height: 400px;
+	width: 200px; */
+	
+}
+.panel panel-danger{
+	height: 400px;
+	width: 150px;
+	
+}
+div.n2 {
+	position: relative;
+	left: 200px;
+	top: 0px;
+	width: 800px;
+	height: 500px;
+
+}
+
+div.n3 {
+	position: absolute;
+	left: 900px;
+	top: 150px;
+	width: 200px;
+	height: 300px;
+ background-image: url('r.jpg');
+	background-size: cover; 
+}
+div.n4{
+	
+	position: absolute;
+	left: 980px;
+	top: 150px;
+	width: 200px;
+	height: 300px;
+/*  background-image: url('r.jpg');
+	background-size: cover;  */
+}
+/* body.subContainer{
+	opacity:0.4; 
+	background-image:url('restaurant.jpg');
+	filter:alpha(opacity=40);
+} */
+.container {
+	background-color: 0px 0px transparent;
+}
+
+#block {
+	background-color: 0px 0px transparent;
+}
+
+#text {
+	position: absolute;
+	top: 100px;
+	left: 100px;
+	font: 12px/1.5 'normal normal normal Tahoma', Helvetica, simsun,
+		sans-serif;
+	text-align: center;
+}
+/* div.container-register{
+	text-align: center;
+	position:relative;
+    background:#CCC;
+     filter:alpha(opacity=40);
+	position:absolute;
+	left: 600;
+	center: center;
+	background: opacity;
+   filter:alpha(opacity=40); 
+	
+} */
+#myframe {
+	width: 800px;
+	height: 500px;
+}
+
+#myframe-news {
+	width: 200px;
+	height: 300px;
+}
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:700);
+
+#cssmenu {
+	background: #f96e5b;
+	width: auto;
+}
+
+/* .navbar-collapse collapse{
+	background: #f96e5b;
+	width: auto;
+}
+.nav navbar-nav{
+		background: #f96e5b;
+	width: auto;
+	} */
+.dropdown{
+	background: #f96e5b;
+	width: auto;
+		color: #ffffff;
+	text-decoration: none;
+	display: block;
+	padding: 15px 25px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 14px;
+	position: relative;
+	-webkit-transition: color .25s;
+	-moz-transition: color .25s;
+	-ms-transition: color .25s;
+	-o-transition: color .25s;
+	transition: color .25s;
+}
+#cssmenu ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	line-height: 1;
+	display: block;
+	zoom: 1;
+}
+
+span.navSpan {
+	width: 110px;
+}
+
+#cssmenu ul:after {
+	content: ' ';
+	display: block;
+	font-size: 0;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+#cssmenu ul li {
+	float: left;
+	display: block;
+	padding: 0;
+}
+
+#cssmenu ul li a {
+	color: #ffffff;
+	text-decoration: none;
+	display: block;
+	padding: 15px 25px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 14px;
+	position: relative;
+	-webkit-transition: color .25s;
+	-moz-transition: color .25s;
+	-ms-transition: color .25s;
+	-o-transition: color .25s;
+	transition: color .25s;
+}
+
+#cssmenu ul li a:hover {
+	color: #333333;
+}
+
+#cssmenu ul li a:hover:before {
+	width: 100%;
+}
+
+#cssmenu ul li a:after {
+	content: '';
+	display: block;
+	position: absolute;
+	right: -3px;
+	top: 19px;
+	height: 6px;
+	width: 6px;
+	background: #ffffff;
+	opacity: .5;
+}
+
+#cssmenu ul li a:before {
+	content: '';
+	display: block;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	height: 3px;
+	width: 0;
+	background: #333333;
+	-webkit-transition: width .25s;
+	-moz-transition: width .25s;
+	-ms-transition: width .25s;
+	-o-transition: width .25s;
+	transition: width .25s;
+}
+
+#cssmenu ul li.last>a:after,#cssmenu ul li:last-child>a:after {
+	display: none;
+}
+
+#cssmenu ul li.active a {
+	color: #333333;
+}
+
+#cssmenu ul li.active a:before {
+	width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+	#cssmenu ul li {
+		float: none;
+	}
+	#cssmenu ul li a {
+		width: 100%;
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+	#cssmenu ul li a:after {
+		display: none;
+	}
+	#cssmenu ul ul {
+		position: absolute;
+		visibility: hidden;
+		top: 30px;
+	}
+	#cssmenu ul li.last:hover ul {
+		visibility: visible;
+		top: 30px;
+	}
+	#cssmenu li:hover {
+		background: yellow;
+	}
+	#cssmenu ul li a:before {
+		height: 1px;
+		background: #ffffff;
+		width: 100%;
+		opacity: .2;
+	}
+	#cssmenu ul li.last>a:before,#cssmenu ul li:last-child>a:before {
+		display: none;
+	}
+}

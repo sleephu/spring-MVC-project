@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+<!--   <debug />  -->
+
+    <global-method-security pre-post-annotations="enabled" />
+
+    <http pattern="/home.jsp" security="none"/> 
+
+	<http use-expressions="true">
+<!-- 	<intercept-url pattern="/accessdenied/*" access="permitAll" /> -->
+     
+		<intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')"/>
+		  <intercept-url pattern="/user/customer/**" access="hasRole('ROLE_CUSTOMER')" />
+		  <intercept-url pattern="/user/restaurant/**" access="hasRole('ROLE_RESTAURANT')" />
+		   <intercept-url pattern="/**" access="permitAll" />
+		   <access-denied-handler error-page="/accessdenied"/>
+		<form-login/>
+		
+		<logout logout-success-url="/" delete-cookies="JSESSIONID" />
+	</http>
+<context:annotation-config/> 
+<authentication-manager>  
+        <authentication-provider user-service-ref="customUserDetailsService">  
+            <password-encoder hash="plaintext">  
+        </password-encoder></authentication-provider>  
+    </authentication-manager> 
+   
+   <!--  <beans:bean id="dataSource"
+        class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close" />  -->
+        
+   <beans:bean id="userAdminDAO" class="edu.neu.coe.dao.impl.UserAdminHibernateDAOImpl"/>
+   <beans:bean id="roleDAO" class="edu.neu.coe.dao.impl.RoleDAOImpl"/>
+    <beans:bean id="customUserDetailsService"
+      class="edu.neu.coe.service.impl.CustomUserDetailsService"/>
+   <!--  <beans:property name="dataSource" ref="dataSource"/> -->
+     
+	<!-- <authentication-manager>
+		<authentication-provider>
+			<user-service>
+				<user name="admin" password="admin" authorities="ROLE_USER, ROLE_ADMIN" />
+				<user name="bob" password="bobspassword" authorities="ROLE_USER" />
+			</user-service>
+		</authentication-provider>
+	</authentication-manager> -->
+	<!-- <beans:bean 
+    id="myAuthSuccessHandler" 
+    class="edu.neu.coe.service.impl.MyAuthenticationSuccessHandler"/> -->
+</beans:beans>
